@@ -20,13 +20,14 @@ export const metadata: Metadata = {
   description: "Personal portfolio of Race Li",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </head>
       <body className={`${ibmPlexSans.variable} ${kalnia.variable} antialiased`}>
         <ThemeProvider attribute="class">
           {children}

@@ -152,7 +152,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
           ))}
         </div>
         <button
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-full p-3 z-10 hover:bg-white/50 dark:hover:bg-black/50 transition-colors"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-white rounded-full p-3 z-10 hover:bg-opacity-70 transition-colors"
           onClick={prevSlide}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
           </svg>
         </button>
         <button
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 dark:bg-black/30 backdrop-blur-md rounded-full p-3 z-10 hover:bg-white/50 dark:hover:bg-black/50 transition-colors"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-white rounded-full p-3 z-10 hover:bg-opacity-70 transition-colors"
           onClick={nextSlide}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
