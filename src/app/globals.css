@@ -8,6 +8,10 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
   --background-end-rgb: 255, 255, 255;
+  --font-kalnia: var(--font-kalnia);
+  --font-ibm-plex-sans: var(--font-ibm-plex-sans);
+  --subtitle-color: 75, 75, 75;  /* 稍微灰一点的颜色 */
+  --description-color: 100, 100, 100;  /* 比 subtitle 稍浅一点的灰色 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,19 +19,18 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+    --subtitle-color: 180, 180, 180;  /* 深色模式下的灰色 */
+    --description-color: 160, 160, 160;  /* 深色模式下比 subtitle 稍深一点的灰色 */
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: rgb(var(--background-start-rgb));
-  font-family: 'IBM Plex Sans', sans-serif;
+  font-family: var(--font-ibm-plex-sans), sans-serif;
 }
 
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-  }
   p {
     @apply text-base font-light mb-4;
   }
@@ -39,9 +42,11 @@ body {
   }
   .subtitle {
     @apply text-xl font-light;
+    color: rgb(var(--subtitle-color));
   }
   .body-text {
     @apply text-base font-normal;
+    color: rgb(var(--description-color));
   }
   .accent-text {
     @apply text-sm font-medium uppercase tracking-wide;
@@ -57,6 +62,7 @@ body {
 .description-text {
   line-height: 1.2;
   margin-bottom: 0;
+  color: rgb(var(--description-color));
 }
 
 .hide-scrollbar {
@@ -71,4 +77,10 @@ body {
 /* 在文件末尾添加 */
 .font-kalnia {
   font-family: var(--font-kalnia), serif;
+}
+
+.project-title {
+  font-family: var(--font-kalnia), serif;
+  @apply font-bold text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 uppercase;
+  line-height: 1.2;
 }

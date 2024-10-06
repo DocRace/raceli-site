@@ -35,10 +35,14 @@ export default function ProjectRow({ project }: ProjectRowProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isWideScreen, setIsWideScreen] = useState(true);
   const [imageHeight, setImageHeight] = useState(500);
+  const [mounted, setMounted] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
+  const { resolvedTheme, theme } = useTheme();
 
   useEffect(() => {
+    setMounted(true);
+    console.log('Current theme:', theme);
+    console.log('Resolved theme:', resolvedTheme);
     const handleResize = () => {
       const width = window.innerWidth;
       setIsWideScreen(width >= 1024);
@@ -54,7 +58,12 @@ export default function ProjectRow({ project }: ProjectRowProps) {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
+  }, [theme, resolvedTheme]); // 添加 resolvedTheme 作为依赖项
+
+  // 如果组件还没挂载，返回一个加载占位符
+  if (!mounted) {
+    return <div>Loading...</div>; // 或者返回一个骨架屏或其他占位内容
+  }
 
   const scrollTo = (index: number) => {
     setCurrentIndex(index);
@@ -78,7 +87,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
   return (
     <div className="relative mt-32 mb-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-5xl mb-6 font-bold uppercase font-kalnia">
+        <h2 className="project-title text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 uppercase">
           {project.title}
         </h2>
       </div>
@@ -139,7 +148,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
                 {slide.brandLogo && (
                   <div className="mt-4">
                     <Image
-                      src={theme === 'dark' ? slide.brandLogo.dark : slide.brandLogo.light}
+                      src={resolvedTheme === 'dark' ? slide.brandLogo.light : slide.brandLogo.dark}
                       alt={slide.brandLogo.alt}
                       width={150}
                       height={50}
@@ -152,7 +161,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
           ))}
         </div>
         <button
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-white rounded-full p-3 z-10 hover:bg-opacity-70 transition-colors"
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/30 dark:bg-black/30 backdrop-blur-md text-black dark:text-white rounded-full p-3 z-10 hover:bg-white/70 dark:hover:bg-black/70 transition-all"
           onClick={prevSlide}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +169,7 @@ export default function ProjectRow({ project }: ProjectRowProps) {
           </svg>
         </button>
         <button
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-white rounded-full p-3 z-10 hover:bg-opacity-70 transition-colors"
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/30 dark:bg-black/30 backdrop-blur-md text-black dark:text-white rounded-full p-3 z-10 hover:bg-white/70 dark:hover:bg-black/70 transition-all"
           onClick={nextSlide}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
