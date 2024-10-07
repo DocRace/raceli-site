@@ -52,7 +52,7 @@ const projectsData = [
       },
       {
         "id": 4,
-        "title": "20 Parrelle Storys in First Season",
+        "title": "20 Parallel Storys in First Season",
         "subtitle": "Season 2 Co-creating Now",
         "descriptions": [
           "Each chapter is a parallel story, co-created by different writers, illustrators, and musicians.",
