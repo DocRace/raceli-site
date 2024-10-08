@@ -1,5 +1,7 @@
 # Race Li's Portfolio
 
+The publicly accessible address of this deployed website is https://raceli.art
+
 This is a personal portfolio website for Race Li, built with [Next.js](https://nextjs.org) and bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Project Overview
