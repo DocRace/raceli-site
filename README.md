@@ -77,4 +77,4 @@ For more details on deploying Next.js apps, check out the [Next.js deployment do
 
 ## Contact
 
-For any inquiries or feedback regarding this portfolio, please contact Race Li at [Your Contact Information].
+For any inquiries or feedback regarding this portfolio, please contact Race Li at callmerace@hotmail.com
