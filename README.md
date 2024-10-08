@@ -2,6 +2,15 @@
 
 The publicly accessible address of this deployed website is https://raceli.art
 
+## Website Preview
+
+![Website Preview 1](/public/readme-images/readme-preview-1.png)
+![Website Preview 2](/public/readme-images/readme-preview-2.png)
+![Website Preview 3](/public/readme-images/readme-preview-3.png)
+![Website Preview 4](/public/readme-images/readme-preview-4.png)
+![Website Preview 5](/public/readme-images/readme-preview-5.png)
+![Website Preview 6](/public/readme-images/readme-preview-6.png)
+
 This is a personal portfolio website for Race Li, built with [Next.js](https://nextjs.org) and bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Project Overview
